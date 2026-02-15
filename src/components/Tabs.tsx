@@ -21,6 +21,7 @@ export const Tabs = ({ selectedTabId }: Props) => {
           {tabs.map(tab => (
             <li
               key={tab.id}
+              data-cy="Tab"
               className={tab.id === selectedTabId ? 'is-active' : ''}
             >
               <Link to={`/tabs/${tab.id}`}>{tab.title}</Link>
@@ -29,7 +30,7 @@ export const Tabs = ({ selectedTabId }: Props) => {
         </ul>
       </div>
 
-      <div className="block">
+      <div className="block" data-cy="TabContent">
         {selectedTab ? selectedTab.content : 'Please select a tab'}
       </div>
     </>
